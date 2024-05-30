@@ -1,6 +1,7 @@
 <?php
 
 require_once 'src/Classes/ProcessBase64Data.php';
+header('Content-type: text/plain; charset=utf-8');
 
 if($_SERVER["REQUEST_URI"] == "/"){
 
@@ -20,9 +21,7 @@ if($_SERVER["REQUEST_URI"] == "/"){
     $result = new ProcessBase64Data($jsonInput);
     $output = json_encode($result->processProductData(),true);
 
-    echo "<pre>";
     print_r($output);
-    echo "</pre>";
 }
 
 ?>
